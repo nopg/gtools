@@ -4,6 +4,7 @@ import sys
 import xml.dom.minidom
 
 from azure.storage.fileshare import ShareClient
+from flask import Markup
 
 import xmltodict
 from jinja2 import Template
@@ -44,11 +45,11 @@ def create_lb_bootstrap(templatefile1, templatefile2, **kwargs):
     share = ShareClient.from_connection_string(AZURE_STORAGE_CONNECTION_STRING, "bootstrap")
     
     index = fullpath.rfind("/")
-    parentfolder = ""
     if index == -1:
         index = fullpath.rfind("\\")
         if index == -1:
             folder = fullpath
+            parentfolder = False
     else:
         parentfolder = fullpath[:index]
         folder = fullpath[index:].strip("/\\") # Remove leading / or \
@@ -58,11 +59,17 @@ def create_lb_bootstrap(templatefile1, templatefile2, **kwargs):
         except:
             share.create_directory(parentfolder)
 
+    if not parentfolder:
+        folderpath = folder
+    else:
+        folderpath = parentfolder + '/' + folder
+
     try:
-        temp = share.get_directory_client(parentfolder +'/'+ folder)
+        temp = share.get_directory_client(folderpath)
         temp.get_directory_properties()
     except:
-        share.create_directory(parentfolder +'/'+ folder)
+
+        share.create_directory(folderpath)
 
     try:
         share.create_directory(f"{fullpath}/fw1")
@@ -105,7 +112,12 @@ def create_lb_bootstrap(templatefile1, templatefile2, **kwargs):
 
     # [END upload_file]
 
-    return f"Bootstrap created. File uploaded to '{kwargs['folder_name']}/config/bootstrap.xml'", "success"
+    msg = Markup(
+        f""\
+        f"Bootstrap created. File uploaded to '{kwargs['folder_name']}/config/bootstrap.xml'"\
+        f"To begin Azure deployment, <a href='https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fcnetpalopublic.blob.core.windows.net%2Farm-public%2Fgenlb.json'>click here.</a>"\
+    )
+    return msg, "success"
 
 
 def create_bootstrap(templatefile1, **kwargs):

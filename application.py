@@ -38,13 +38,6 @@ def bs_create():
         # Update bootstrap, alert user.
         msg, successOrFail = bs_maker.create_lb_bootstrap('static/bs-template1.xml', 'static/bs-template2.xml', **kwargs)
 
-        if successOrFail == "success":
-            msg += """
-
-                To begin Azure deployment, <a href='https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fcnetpalopublic.blob.core.windows.net%2Farm-public%2Fgenlb.json'>click here.</a>
-                    
-                """
-            msg = Markup(msg)
         flash(msg, successOrFail)
 
     return render_template("bs_create.html", title="PA Bootstrap Maker", form=form)
