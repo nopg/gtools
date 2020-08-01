@@ -3,3 +3,7 @@
 *.parameters.json
 env-*/
 __pycache__/
+
+auto-bootstrap1.xml
+
+auto-bootstrap2.xml

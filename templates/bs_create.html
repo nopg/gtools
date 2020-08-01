@@ -20,37 +20,40 @@
           
         {{ form.hidden_tag()}}
 
+        {{ form.management_subnet.label(class="form-control-label") }}
+        {{ form.management_subnet(class="form-control form-control-lg") }}
+        {{ form.public_subnet.label(class="form-control-label") }}
+        {{ form.public_subnet(class="form-control form-control-lg") }}
+        {{ form.private_subnet.label(class="form-control-label") }}
+        {{ form.private_subnet(class="form-control form-control-lg") }}
+
         {{ form.pahostname1.label(class="form-control-label") }}
         {{ form.pahostname1(class="form-control form-control-lg") }}
 
-        {{ form.paprivateip1.label(class="form-control-label") }}
-        {{ form.paprivateip1(class="form-control form-control-lg") }}
-
-        {{ form.paprivatenexthop1.label(class="form-control-label") }}
-        {{ form.paprivatenexthop1(class="form-control form-control-lg") }}
-
         {{ form.papublicip1.label(class="form-control-label") }}
         {{ form.papublicip1(class="form-control form-control-lg") }}
-
         {{ form.papublicnexthop1.label(class="form-control-label") }}
         {{ form.papublicnexthop1(class="form-control form-control-lg") }}
+
+        {{ form.paprivateip1.label(class="form-control-label") }}
+        {{ form.paprivateip1(class="form-control form-control-lg") }}
+        {{ form.paprivatenexthop1.label(class="form-control-label") }}
+        {{ form.paprivatenexthop1(class="form-control form-control-lg") }}
 
         <hr>
 
         {{ form.pahostname2.label(class="form-control-label") }}
         {{ form.pahostname2(class="form-control form-control-lg") }}
 
-        {{ form.paprivateip2.label(class="form-control-label") }}
-        {{ form.paprivateip2(class="form-control form-control-lg") }}
-
-        {{ form.paprivatenexthop2.label(class="form-control-label") }}
-        {{ form.paprivatenexthop2(class="form-control form-control-lg") }}
-
         {{ form.papublicip2.label(class="form-control-label") }}
         {{ form.papublicip2(class="form-control form-control-lg") }}
-
         {{ form.papublicnexthop2.label(class="form-control-label") }}
         {{ form.papublicnexthop2(class="form-control form-control-lg") }}
+
+        {{ form.paprivateip2.label(class="form-control-label") }}
+        {{ form.paprivateip2(class="form-control form-control-lg") }}
+        {{ form.paprivatenexthop2.label(class="form-control-label") }}
+        {{ form.paprivatenexthop2(class="form-control form-control-lg") }}
 
         <hr>
 

@@ -22,16 +22,22 @@ def bs_create():
     if form.validate_on_submit():
         # Gather Args
         kwargs = {
+                    'management_subnet':form.management_subnet.data,
+                    'public_subnet':form.public_subnet.data,
+                    'private_subnet':form.private_subnet.data,
+
                     'hostname1':form.pahostname1.data,
-                    'private_ip1':form.paprivateip1.data,
                     'public_ip1':form.papublicip1.data,
-                    'private_nexthop1':form.paprivatenexthop1.data,
                     'public_nexthop1':form.papublicnexthop1.data,
+                    'private_ip1':form.paprivateip1.data,
+                    'private_nexthop1':form.paprivatenexthop1.data,
+
                     'hostname2':form.pahostname2.data,
-                    'private_ip2':form.paprivateip2.data,
                     'public_ip2':form.papublicip2.data,
-                    'private_nexthop2':form.paprivatenexthop2.data,
                     'public_nexthop2':form.papublicnexthop2.data,
+                    'private_ip2':form.paprivateip2.data,
+                    'private_nexthop2':form.paprivatenexthop2.data,
+
                     'connection_string':form.connection_string.data,
                     'folder_name':form.folder_name.data
         }
