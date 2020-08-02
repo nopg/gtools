@@ -20,12 +20,15 @@
           
         {{ form.hidden_tag()}}
 
-        {{ form.management_subnet.label(class="form-control-label") }}
-        {{ form.management_subnet(class="form-control form-control-lg") }}
-        {{ form.public_subnet.label(class="form-control-label") }}
-        {{ form.public_subnet(class="form-control form-control-lg") }}
         {{ form.private_subnet.label(class="form-control-label") }}
         {{ form.private_subnet(class="form-control form-control-lg") }}
+
+        {{ form.web_subnet.label(class="form-control-label") }}
+        {{ form.web_subnet(class="form-control form-control-lg") }}
+        {{ form.db_subnet.label(class="form-control-label") }}
+        {{ form.db_subnet(class="form-control form-control-lg") }}
+        {{ form.business_subnet.label(class="form-control-label") }}
+        {{ form.business_subnet(class="form-control form-control-lg") }}
 
         {{ form.pahostname1.label(class="form-control-label") }}
         {{ form.pahostname1(class="form-control form-control-lg") }}

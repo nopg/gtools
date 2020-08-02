@@ -3,9 +3,10 @@ from wtforms import StringField, PasswordField, SubmitField, BooleanField, Radio
 from wtforms.validators import DataRequired, Length, EqualTo
 
 class BS_CreatePage(FlaskForm):
-    management_subnet = StringField('Management Subnet (CIDR)', validators=[DataRequired()])
-    public_subnet = StringField('Public Subnet (CIDR)', validators=[DataRequired()])
     private_subnet = StringField('Private Subnet (CIDR)', validators=[DataRequired()])
+    web_subnet = StringField('Web Subnet (CIDR)', validators=[DataRequired()])
+    db_subnet = StringField('DB Subnet (CIDR)', validators=[DataRequired()])
+    business_subnet = StringField('Business Subnet (CIDR)', validators=[DataRequired()])
 
     pahostname1 = StringField('PA1 Hostname', validators=[DataRequired()])
     papublicip1 = StringField('PA1 Public Subnet (rfc 1918) IP', validators=[DataRequired()])

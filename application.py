@@ -22,9 +22,10 @@ def bs_create():
     if form.validate_on_submit():
         # Gather Args
         kwargs = {
-                    'management_subnet':form.management_subnet.data,
-                    'public_subnet':form.public_subnet.data,
                     'private_subnet':form.private_subnet.data,
+                    'web_subnet':form.web_subnet.data,
+                    'db_subnet':form.db_subnet.data,
+                    'business_subnet':form.business_subnet.data,
 
                     'hostname1':form.pahostname1.data,
                     'public_ip1':form.papublicip1.data,
