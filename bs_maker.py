@@ -114,8 +114,14 @@ def create_lb_bootstrap(templatefile1, templatefile2, **kwargs):
 
     msg = Markup(
         f""\
-        f"Bootstrap created. File uploaded to '{kwargs['folder_name']}/config/bootstrap.xml'"\
-        f"To begin Azure deployment, <a href='https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fcnetpalopublic.blob.core.windows.net%2Farm-public%2Fgenlb.json'>click here.</a>"\
+        f"Bootstrap created. File uploaded to '{kwargs['folder_name']}/config/fwX/bootstrap.xml'"\
+        f"<br>"\
+        f"To begin Azure deployment, Click Below. <a href='https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fcnetpalopublic.blob.core.windows.net%2Farm-public%2Fgenlb-sub.json'>"\
+        f"<br> <img src='https://aka.ms/deploytoazurebutton'>"\
+        f"</a>"\
+        f"<br>"\
+        f"To deploy without the subscriber vnet created, <a href='https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fcnetpalopublic.blob.core.windows.net%2Farm-public%2Fgenlb.json'>"\
+        f"Click Here.</a>"\
     )
     return msg, "success"
 
