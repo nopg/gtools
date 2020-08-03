@@ -3,6 +3,7 @@ import os
 import sys
 import xml.dom.minidom
 
+import ipcalc
 from azure.storage.fileshare import ShareClient
 from flask import Markup
 
@@ -31,6 +32,10 @@ def create_lb_bootstrap(templatefile1, templatefile2, **kwargs):
         template1 = Template(fin.read())
     with open(templatefile2) as fin:
         template2 = Template(fin.read())
+
+    # Web VM will be the 4th IP available on this subnet
+    subnet = ipcalc.Network(kwargs["web_subnet"])
+    kwargs["web_server_private"] = subnet.host_first() + 3
 
     bootstrap1 = template1.render(**kwargs)
     create_xml_files(bootstrap1, 'auto-bootstrap1.xml')

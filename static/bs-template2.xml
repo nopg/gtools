@@ -877,7 +877,7 @@
               <ip-netmask>{{public_ip2}}</ip-netmask>
             </entry>
             <entry name="Sample Web Server 1 Private IP">
-              <ip-netmask>10.99.1.4/32</ip-netmask>
+              <ip-netmask>{{ web_server_private }}</ip-netmask>
             </entry>
             <entry name="Sample Web Server 1 Public IP">
               <ip-netmask>99.99.99.99/32</ip-netmask>
