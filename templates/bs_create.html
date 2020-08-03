@@ -74,11 +74,14 @@
 
         <hr>
 
-        {{ form.folder_name.label(class="form-control-label") }}
-        {{ form.folder_name(class="form-control form-control-lg") }}
+        {{ form.storage_account_name.label(class="form-control-label") }}
+        {{ form.storage_account_name(class="form-control form-control-lg") }}
 
-        {{ form.connection_string.label(class="form-control-label") }}
-        {{ form.connection_string(class="form-control form-control-lg") }}
+        {{ form.storage_folder_name.label(class="form-control-label") }}
+        {{ form.storage_folder_name(class="form-control form-control-lg") }}
+
+        {{ form.storage_access_key.label(class="form-control-label") }}
+        {{ form.storage_access_key(class="form-control form-control-lg") }}
 
       </fieldset>
       <div class="form-check">

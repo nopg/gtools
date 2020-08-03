@@ -20,6 +20,7 @@ class BS_CreatePage(FlaskForm):
     paprivateip2 = StringField('PA2 Private IP', validators=[DataRequired()])
     paprivatenexthop2 = StringField('PA2 Private Next Hop Gateway IP', validators=[DataRequired()])
 
-    folder_name = StringField('Azure Storage Folder Name', validators=[DataRequired()])
-    connection_string = StringField('Azure Storage Connection String', validators=[DataRequired()])
+    storage_account_name = StringField('Azure Storage Account Name', default="cnetpalopublic", validators=[DataRequired()])
+    storage_folder_name = StringField('Azure Storage Folder Name', validators=[DataRequired()])
+    storage_access_key = StringField('Azure Storage Access Key', validators=[DataRequired()])
     submit = SubmitField('Build Bootstrap File')

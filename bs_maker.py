@@ -39,8 +39,10 @@ def create_lb_bootstrap(templatefile1, templatefile2, **kwargs):
     create_xml_files(bootstrap2, 'auto-bootstrap2.xml')
 
     # Begin Azure 
-    AZURE_STORAGE_CONNECTION_STRING = kwargs['connection_string']
-    fullpath = kwargs['folder_name']
+    AZURE_STORAGE_ACCOUNT_NAME = kwargs['storage_account_name']
+    AZURE_STORAGE_ACCESS_KEY = kwargs['storage_access_key']
+    AZURE_STORAGE_CONNECTION_STRING = f"DefaultEndpointsProtocol=https;AccountName={AZURE_STORAGE_ACCOUNT_NAME};AccountKey={AZURE_STORAGE_ACCESS_KEY};EndpointSuffix=core.windows.net"
+    fullpath = kwargs['storage_folder_name']
 
     share = ShareClient.from_connection_string(AZURE_STORAGE_CONNECTION_STRING, "bootstrap")
     
@@ -114,7 +116,7 @@ def create_lb_bootstrap(templatefile1, templatefile2, **kwargs):
 
     msg = Markup(
         f""\
-        f"Bootstrap created. File uploaded to '{kwargs['folder_name']}/config/fwX/bootstrap.xml'"\
+        f"Bootstrap created. File uploaded to '{kwargs['storage_folder_name']}/config/fwX/bootstrap.xml'"\
         f"<br>"\
         f"To begin Azure deployment, Click Below. <a href='https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fcnetpalopublic.blob.core.windows.net%2Farm-public%2Fgenlb-sub.json'>"\
         f"<br> <img src='https://aka.ms/deploytoazurebutton'>"\

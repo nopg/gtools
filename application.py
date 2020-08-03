@@ -39,8 +39,9 @@ def bs_create():
                     'private_ip2':form.paprivateip2.data,
                     'private_nexthop2':form.paprivatenexthop2.data,
 
-                    'connection_string':form.connection_string.data,
-                    'folder_name':form.folder_name.data
+                    'storage_account_name':form.storage_account_name.data,
+                    'storage_folder_name':form.storage_folder_name.data,
+                    'storage_access_key':form.storage_access_key.data
         }
         # Update bootstrap, alert user.
         msg, successOrFail = bs_maker.create_lb_bootstrap('static/bs-template1.xml', 'static/bs-template2.xml', **kwargs)
