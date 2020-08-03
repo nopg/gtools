@@ -796,7 +796,7 @@
                     <member>ping</member>
                   </application>
                   <service>
-                    <member>service-https</member>
+                    <member>application-default</member>
                   </service>
                   <hip-profiles>
                     <member>any</member>
