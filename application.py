@@ -66,7 +66,7 @@ def login():
 
 
 @app.route("/uvu", methods=["GET", "POST"])
-def login():
+def uvu():
     return render_template("uvu/uvu.html", title="Utah Valley University!")
 
 
