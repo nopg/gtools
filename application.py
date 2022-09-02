@@ -65,6 +65,11 @@ def login():
     return render_template("temp.html", title="gMenu")
 
 
+@app.route("/uvu", methods=["GET", "POST"])
+def login():
+    return render_template("uvu/uvu.html", title="Utah Valley University!")
+
+
 # If run from the command line
 if __name__ == "__main__":
     app.run(debug=True)
