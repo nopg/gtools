@@ -3,16 +3,21 @@
 
     <div class="content-section">
       <p>To ensure the templates are up to date or suitable for your environment, please consult with a CompuNet Engineer before deploying.</p>
+
+      <span class="h5">
+        <a href="/bs_maker">
+        UVU: Create your bootstrap config first here
+        </a>
+        After creation, DO NOT click the button that will appear, instead navigate back to this page and click the icon below:
+      </span>
+      
         <hr>
         <h1 id="lb-sandwich-2-palo-alto-vm-s">UVU LB Sandwich - 2 Palo Alto VM&#39;s</h1>
-        <p>Deploys 2 PA VM&#39;s in a &#39;Load Balancer Sandwich&#39;. Builds everything needed to POC a working Azure-PA environment. Bootstraps a PA configuration allowing external access through the LB and PA&#39;s to a (automatically built) Web-VM running default apache on port 80. Update the PA address object with the Public IP&#39; Azure hands out for the External LB. A 2nd DB-VM is built for testing east/west as well.</p>
-        <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fcnet-pa-tools.azurewebsites.net%2Fstatic%2Fuvu.json", target="_blank"><img src="https://aka.ms/deploytoazurebutton" alt="Deploy to Azure"></a></p>
+        <p>Deploys 2 PA VM&#39;s in a &#39;Load Balancer Sandwich&#39;. Builds everything needed for a working Azure-PA environment, for UVU!. Bootstraps a PA configuration allowing external access through the LB and PA&#39;s with sample web-server rule. Update the PA address object with the Public  IP&#39; Azure hands out for the External LB and the private IP of your web server. Existing management/private/public subnets should already exist, but RT's/NSG's will be overwritten for the PA.</p>
+        <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fcnetpalopublic.blob.core.windows.net%2Farm-public%2Fuvu-existing.json", target="_blank"><img src="https://aka.ms/deploytoazurebutton" alt="Deploy to Azure"></a></p>
         <hr>
         <hr>
 
     </div>
 
 {% endblock content %}
-
-https://cnet-pa-tools.azurewebsites.net/static/uvu.json
-
